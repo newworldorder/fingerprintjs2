@@ -48,27 +48,45 @@
     },
     get: function(done){
       var keys = [];
+      keys.push('User Agent <br />');
       keys = this.userAgentKey(keys);
+      keys.push('<br /><br /> Language <br />');
       keys = this.languageKey(keys);
+      keys.push('<br /><br /> Color Depth <br />');
       keys = this.colorDepthKey(keys);
+      keys.push('<br /><br /> Screen Resolution <br />');
       keys = this.screenResolutionKey(keys);
+      keys.push('<br /><br /> Time Zone Offset <br />');
       keys = this.timezoneOffsetKey(keys);
+      keys.push('<br /><br /> Session Storage <br />');
       keys = this.sessionStorageKey(keys);
+      keys.push('<br /><br /> Local Storage <br />');
       keys = this.localStorageKey(keys);
+      keys.push('<br /><br /> Index DB <br />');
       keys = this.indexedDbKey(keys);
+      keys.push('<br /><br /> Add Behavior <br />');
       keys = this.addBehaviorKey(keys);
+      keys.push('<br /><br /> Open DB <br />');
       keys = this.openDatabaseKey(keys);
+      keys.push('<br /><br /> CPU Class <br />');
       keys = this.cpuClassKey(keys);
+      keys.push('<br /> Platform <br />');
       keys = this.platformKey(keys);
+      keys.push('<br /><br /> Do Not Track  <br />');
       keys = this.doNotTrackKey(keys);
+      keys.push('<br /><br /> Plugins <br />');
       keys = this.pluginsKey(keys);
+      keys.push('<br /><br /> Canvas <br />');
       keys = this.canvasKey(keys);
+      keys.push('<br /><br /> WebGL <br />');
       keys = this.webglKey(keys);
+      keys.push('<br /><br /> Ad Block <br />');
       keys = this.adBlockKey(keys);
       var that = this;
+      keys.push('<br /><br /> Fonts <br />');
       this.fontsKey(keys, function(newKeys){
         var murmur = that.x64hash128(newKeys.join("~~~"), 31);
-        return done(murmur);
+        return done(keys);
       });
     },
 
