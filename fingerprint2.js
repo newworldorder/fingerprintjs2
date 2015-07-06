@@ -70,7 +70,7 @@
       keys = this.openDatabaseKey(keys);
       keys.push('<br /><br /> CPU Class <br />');
       keys = this.cpuClassKey(keys);
-      keys.push('<br /> Platform <br />');
+      keys.push('<br /><br /> Platform <br />');
       keys = this.platformKey(keys);
       keys.push('<br /><br /> Do Not Track  <br />');
       keys = this.doNotTrackKey(keys);
